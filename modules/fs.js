@@ -23,7 +23,7 @@ fs.writeFile(
     // Adicionar ao arquivo
     fs.appendFile(
       path.join(__dirname, "/test", "test.txt"),
-      "Hello node!",
+      "Hello little node!",
       (error) => {
         if (error) {
           return console.log(error);
