@@ -1,8 +1,14 @@
-const { Person } = require("./person");
+// const { Person } = require("./person");
+const dotenv = require("dotenv");
+const connectToDatabase = require("../FullStackClub-Node.js/src/database/connect");
 
-// require("./modules/path");
-// require("./modules/fs");
-// require("./modules/http");
+dotenv.config();
+
+connectToDatabase();
+
+// // require("./modules/path");
+// // require("./modules/fs");
+// // require("./modules/http");
 require("./modules/express");
 
-const person = new Person("Sullivan");
+// const person = new Person("Sullivan");
