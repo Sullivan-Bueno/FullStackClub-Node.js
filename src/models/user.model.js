@@ -20,6 +20,23 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-const UserModel = mongoose.model('User', userSchema);
+const artistsSchema = new mongoose.Schema({
+  image: {
+    type: String,
+    required: true,
+  },
+  name: {
+    type: String,
+    required: true,
+  },
+  banner: {
+    type: String,
+    required: true,
+  },
+});
+
+const UserModel = mongoose.model("User", userSchema);
+const ArtistsModel = mongoose.model("Artists", artistsSchema);
 
 module.exports = UserModel;
+module.exports = ArtistsModel;
