@@ -118,4 +118,3 @@ app.delete("/artists/:id", async (req, res) => {
 const port = 8080;
 
 app.listen(port, () => console.log(`Servidor rodando na porta ${port}`));
-console.log(mongoose.connection.name);
