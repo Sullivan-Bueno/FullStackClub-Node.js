@@ -70,6 +70,7 @@ app.post("/users", async (req, res) => {
   }
 });
 
+// Teste para puxar json
 app.post("/artists", async (req, res) => {
   try {
     const artist = await ArtistsModel.create(req.body);
