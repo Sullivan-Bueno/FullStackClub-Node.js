@@ -1,7 +1,4 @@
 const mongoose = require("mongoose");
-// const express = require("express");
-
-// const app = express();
 
 const connectToDatabase = async () => {
   try {
@@ -22,6 +19,3 @@ module.exports = connectToDatabase;
 //   res.status(200).send("<h1>Hello World!</h1>");
 // });
 
-// const port = 8080;
-
-// app.listen(port, () => console.log(`Servidor rodando na porta ${port}`));

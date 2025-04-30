@@ -20,23 +20,16 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-const artistsSchema = new mongoose.Schema({
-  image: {
-    type: String,
-    required: true,
-  },
-  name: {
-    type: String,
-    required: true,
-  },
-  banner: {
-    type: String,
-    required: true,
-  },
-});
+const songsSchema = new mongoose.Schema({});
+const artistsSchema = new mongoose.Schema({});
 
 const UserModel = mongoose.model("User", userSchema);
-const ArtistsModel = mongoose.model("Artists", artistsSchema);
+const ArtistsModel = mongoose.model("artists", artistsSchema);
+const SongsModel = mongoose.model("songs", songsSchema);
 
-module.exports = UserModel;
-module.exports = ArtistsModel;
+module.exports = {
+  UserModel,
+  ArtistsModel,
+  SongsModel,
+};
+
