@@ -9,7 +9,6 @@ const port = 8080;
 
 app.listen(port, () => console.log(`Servidor rodando na porta ${port}`));
 
-
 // Especifica que os arquivos usados nesse JS serão JSON
 app.use(express.json());
 
@@ -112,7 +111,6 @@ app.get("/artists/:id", async (req, res) => {
   }
 });
 
-
 app.delete("/artists/:id", async (req, res) => {
   try {
     const id = req.params.id;
@@ -120,6 +118,29 @@ app.delete("/artists/:id", async (req, res) => {
 
     res.status(200).json(artist);
   } catch (error) {
+    res.status(500).send(error.message);
+  }
+});
+
+// Songs
+
+app.get("/songs", async (req, res) => {
+  try {
+    const song = await SongsModel.find({});
+
+    res.status(200).json(song);
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+});
+
+app.get("/songs/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    const song = await SongsModel.findById(id);
+
+    res.status(200).json(song);
+  } catch {
     res.status(500).send(error.message);
   }
 });
